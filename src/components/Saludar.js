@@ -1,7 +1,11 @@
 import React from "react";
 
 export default function Saludar(props) {
+  const { userInfo, saludarFn } = props;
+  const { name } = userInfo;
+
   console.log(props);
+  console.log(userInfo);
 
   return (
     <div>
@@ -9,9 +13,7 @@ export default function Saludar(props) {
         Hola {props.userInfo.name}, tiene {props.userInfo.edad} años, le gusta
         el color {props.userInfo.color}
       </p>
-      <button onClick={() => props.saludarFn(props.userInfo.name)}>
-        Saludar
-      </button>
+      <button onClick={() => saludarFn(name)}>Saludar</button>
     </div>
   );
 }
