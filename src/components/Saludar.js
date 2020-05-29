@@ -5,9 +5,10 @@ export default function Saludar(props) {
 
   return (
     <div>
-      <h2>
-        Hola {props.name}, tiene {props.edad} años
-      </h2>
+      <p>
+        Hola {props.userInfo.name}, tiene {props.userInfo.edad} años, le gusta
+        el color {props.userInfo.color}
+      </p>
     </div>
   );
 }
