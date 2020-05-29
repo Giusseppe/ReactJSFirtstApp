@@ -2,7 +2,11 @@ import React from "react";
 
 export default function Saludar(props) {
   const { userInfo, saludarFn } = props;
-  const { name = "Anonimo" } = userInfo;
+  const {
+    name = "Anonimo",
+    edad = "?",
+    color = " que nadie conoce",
+  } = userInfo;
 
   console.log(props);
   console.log(userInfo);
@@ -10,10 +14,9 @@ export default function Saludar(props) {
   return (
     <div>
       <p>
-        Hola {props.userInfo.name}, tiene {props.userInfo.edad} años, le gusta
-        el color {props.userInfo.color}
+        Hola {name}, tiene {edad} años, le gusta el color {color}
       </p>
-      <button onClick={() => saludarFn(name)}>Saludar</button>
+      <button onClick={() => saludarFn(name, edad)}>Saludar</button>
     </div>
   );
 }
