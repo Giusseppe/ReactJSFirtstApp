@@ -1,19 +1,58 @@
 import React from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
-import Saludar from "./components/Saludar";
-function App() {
-  const userInfo = { name: "Giusseppe", edad: 28, color: "Azul" };
+// import Saludar from "./components/Saludar";
+import { Button, Accordion, Card, Alert } from "react-bootstrap";
 
-  const saludarFn = (name, edad) => {
-    console.log(`hola ${name} tiene ${edad} años`);
-  };
+import { ReactComponent as ReactIcon } from "./assets/original.svg";
+
+function App() {
+  // const userInfo = { name: "Giusseppe", edad: 28, color: "Azul" };
+  // const userInfo2 = { name: "Batman", edad: 35, color: "Negro" };
+
+  // const saludarFn = (name, edad) => {
+  //   console.log(`hola ${name} tiene ${edad} años`);
+  // };
   return (
+    // <div className="App">
+    //   <header className="App-header">
+    //     <img src={logo} className="App-logo" alt="logo" />
+    //     <Saludar userInfo={userInfo} saludarFn={saludarFn} />
+    //     <Saludar userInfo={userInfo2} saludarFn={saludarFn} />
+    //   </header>
+    // </div>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Saludar userInfo={userInfo} saludarFn={saludarFn} />
-      </header>
+      <h1>React Bootstrap</h1>
+      <Button variant="primary" onClick={() => console.log("Hola")}>
+        Click
+      </Button>{" "}
+      <Button variant="primary" size="lg" block>
+        Block level button
+      </Button>
+      <Accordion defaultActiveKey="0">
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle as={Button} variant="link" eventKey="0">
+              Abrir!
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="0">
+            <Card.Body>Hello! Amigo I'm the body</Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle as={Button} variant="link" eventKey="1">
+              Abrir!
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="1">
+            <Card.Body>Hello! Chorizo I'm another body</Card.Body>
+          </Accordion.Collapse>
+        </Card>
+      </Accordion>
+      <Alert variant="danger">Peligro!</Alert>
+      <ReactIcon />
     </div>
   );
 }
