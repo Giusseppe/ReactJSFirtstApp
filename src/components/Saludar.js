@@ -9,6 +9,9 @@ export default function Saludar(props) {
         Hola {props.userInfo.name}, tiene {props.userInfo.edad} años, le gusta
         el color {props.userInfo.color}
       </p>
+      <button onClick={() => props.saludarFn(props.userInfo.name)}>
+        Saludar
+      </button>
     </div>
   );
 }
