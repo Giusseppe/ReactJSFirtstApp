@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Saludar from "./components/Saludar";
 function App() {
-  const userInfo = { name: "Giusseppe", edad: 28, color: "Azul" };
+  const userInfo = { edad: 28, color: "Azul" };
 
   const saludarFn = (name) => {
     console.log("hola " + name);
